@@ -2264,7 +2264,7 @@ class ControllerModuleExchange1c extends Controller {
 		if ($data !== false) {
 
 			// Записываем в файл
-			$filesize = file_put_contents($uplod_file, $data);
+			$filesize = file_put_contents($uplod_file, $data, FILE_APPEND | LOCK_EX);
 			$this->log("filesize: " . $filesize, 2);
 
 			if ($filesize) {
